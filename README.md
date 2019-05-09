@@ -1,6 +1,6 @@
 # CTEC 227 - Registration and Login Primitive Example
 
-This code was developed by students in class.
+This code was developed by **students** in class.
 
 It contains 3 files:
 
