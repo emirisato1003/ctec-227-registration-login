@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <style>
+        #showPassword {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <?php 
@@ -53,16 +58,30 @@
      <form action="login.php" method="POST">
          <label for="email">Email</label>
          <br><br>
-         <input type="email" name="email" id="email" required>
+         <input type="email" name="email" id="email" required> 
          <br><br>
          <label for="password">Password</label>
+         <span id="showPassword" onclick="showPassword();">Show Password</span>
          <br><br>
          <input type="password" name="password" id="password" required>
          <br><br>
          <input type="submit" value="Login">
      </form>
 
-
+    <script>
+        function showPassword() {
+            let passwordField = document.getElementById('password');
+            let showPassword = document.getElementById('showPassword');
+            
+            if (showPassword.innerHTML === 'Show Password') {
+                showPassword.innerHTML = 'Hide Password';
+                passwordField.type = 'text';
+            } else if (showPassword.innerHTML === 'Hide Password') {
+                passwordField.type = 'password';
+                showPassword.innerHTML = 'Show Password';
+            }
+        }
+    </script>
 
 </body>
 </html>

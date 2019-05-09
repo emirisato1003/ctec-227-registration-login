@@ -7,3 +7,4 @@ It contains 3 files:
 - [register.php](register.php)
 - [login.php](login.php)
 - [home.php](home.php)
+
