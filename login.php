@@ -1,41 +1,20 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <style>
-        #showPassword {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <?php 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-     # Create a new connection to the database
-     $db = new mysqli('localhost','root','','codemonkey');
+<?php
+// login.php
+session_start();
+$pageTitle = 'Login';
+require 'inc/header.inc.php';
+require_once 'inc/db_connect.inc.php';
 
-     # If there was an error connecting to the database
-     if ($db->connect_error) {
-         $error = $db->connect_error;
-         echo $error;
-     }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-     # Set the character encoding of the database connection to UTF-8
-     $db->set_charset('utf8');
+    $email = $db->real_escape_string($_POST['email']);
+    $password = hash('sha512', $db->real_escape_string($_POST['password']));
 
-     $email = $_POST['email'];
-     $password = hash('sha512',$_POST['password']);
-
-     $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+    $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
     //  echo $sql;
 
-     $result = $db->query($sql);
-     if ($result->num_rows == 1) {
+    $result = $db->query($sql);
+    if ($result->num_rows == 1) {
 
         $_SESSION['loggedin'] = 1;
         $_SESSION['email'] = $email;
@@ -44,44 +23,26 @@
         $_SESSION['first_name'] = $row['first_name'];
 
         header('location: home.php');
-        
-     } else {
-         echo '<p>Please try again or go away</p>';
-     }
-     
-    //  var_dump($result);
-
+    } else {
+        echo '<p>Please try again or go away</p>';
     }
+}
 
-    ?>
+?>
 
-     <form action="login.php" method="POST">
-         <label for="email">Email</label>
-         <br><br>
-         <input type="email" name="email" id="email" required> 
-         <br><br>
-         <label for="password">Password</label>
-         <span id="showPassword" onclick="showPassword();">Show Password</span>
-         <br><br>
-         <input type="password" name="password" id="password" required>
-         <br><br>
-         <input type="submit" value="Login">
-     </form>
+<form action="login.php" method="POST">
+    <label for="email">Email</label>
+    <br><br>
+    <input type="email" name="email" id="email" required>
+    <br><br>
+    <label for="password">Password</label>
+    <span id="showPassword" onclick="showPassword();">Show Password</span>
+    <br><br>
+    <input type="password" name="password" id="password" required>
+    <br><br>
+    <input type="submit" value="Login">
+</form>
 
-    <script>
-        function showPassword() {
-            let passwordField = document.getElementById('password');
-            let showPassword = document.getElementById('showPassword');
-            
-            if (showPassword.innerHTML === 'Show Password') {
-                showPassword.innerHTML = 'Hide Password';
-                passwordField.type = 'text';
-            } else if (showPassword.innerHTML === 'Hide Password') {
-                passwordField.type = 'password';
-                showPassword.innerHTML = 'Show Password';
-            }
-        }
-    </script>
+<script src="js/script.js"></script>
 
-</body>
-</html>
+<?php require 'inc/footer.inc.php'; ?>
