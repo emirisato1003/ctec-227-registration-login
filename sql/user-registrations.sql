@@ -33,7 +33,7 @@ CREATE TABLE `user` (
   `email` varchar(64) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
-  `password` varchar(128) NOT NULL
+  `password` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
