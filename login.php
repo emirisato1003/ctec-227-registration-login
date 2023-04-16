@@ -2,7 +2,7 @@
 // login.php
 session_start();
 $pageTitle = 'Login';
-require 'inc/header.inc.php';
+require_once 'inc/header.inc.php';
 require_once 'inc/db_connect.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -45,4 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <script src="js/script.js"></script>
 
-<?php require 'inc/footer.inc.php'; ?>
+<?php require_once 'inc/footer.inc.php'; ?>

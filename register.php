@@ -1,7 +1,7 @@
 <?php
 // register.php
 $pageTitle = "Register";
-require 'inc/header.inc.php';
+require_once 'inc/header.inc.php';
 require_once 'inc/db_connect.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,4 +41,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br><br>
     <input type="submit" value="Register">
 </form>
-<?php require 'inc/footer.inc.php'; ?>
+
+<?php require_once 'inc/footer.inc.php'; ?>

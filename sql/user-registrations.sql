@@ -36,26 +36,6 @@ CREATE TABLE `user` (
   `password` varchar(512) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `email`, `first_name`, `last_name`, `password`) VALUES
-(1, 'belgort@clark.edu', 'Bruce', 'Elgort', 'secret'),
-(5, 'bruce.elgort@gmail.com', 'sdfsaf', 'safsfsaf', 'sadfsdf'),
-(7, 'beau@martin.com', 'sdaff', 'sdfsda', 'sdafs'),
-(10, 'ahagha@gaga.com', 'sdfsdaf', 'sfdsdf', 'sdfsafsadf'),
-(15, 'lady@gaga.com', 'sdafsadf', 'sddfadff', 'sdafsadf'),
-(17, 'iosif@frenchfries.org', 'sadfasf', 'sadfsdf', 'sdfdsafsa'),
-(20, 'june@pain.com', 'June', 'Pain', 'sha512(password)'),
-(21, 'b@b.com', 'sdfsadf', 'sadfsdf', ''),
-(24, 'scott@scott.com', 'scott', 'scott', 'b119701f3d3eaa97d998a4e8021307785e7f107f26d4f9f72f1cc58591a712ea84e1c2349335412e307c518d572526b2f92c7a8d20d0cd108ee97654e3455d5b'),
-(35, 'A@A.COM', 'Cat', 'Stevens', '4241b986a49591d445ebb840bc4b49c12b10b392b49222bc45dfd8b871cb3d0e742cdba152aa782e253026c7fc93fe8287b95c5fd0e22467e99c89501a502cd4'),
-(51, 'joani@joani.com', 'Joani', 'Jendgleski', '4241b986a49591d445ebb840bc4b49c12b10b392b49222bc45dfd8b871cb3d0e742cdba152aa782e253026c7fc93fe8287b95c5fd0e22467e99c89501a502cd4');
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `user`
@@ -72,7 +52,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

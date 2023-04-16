@@ -2,7 +2,7 @@
 // home.php
 session_start();
 $pageTitle = 'Home';
-require 'inc/header.inc.php';
+require_once 'inc/header.inc.php';
 ?>
 
 <a href="register.php">Register</a>
@@ -14,4 +14,4 @@ require 'inc/header.inc.php';
 <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script defer src="js/script.js"></script>
 
-<?php require 'inc/footer.inc.php' ?>
+<?php require_once 'inc/footer.inc.php' ?>

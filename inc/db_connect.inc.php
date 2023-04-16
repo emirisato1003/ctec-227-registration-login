@@ -1,7 +1,7 @@
 <?php
 // db_connect.inc.php
 # Create a new connection to the database
-$db = new mysqli('localhost', 'root', '', 'codemonkey');
+$db = new mysqli('localhost', 'root', '', 'ctec');
 
 # If there was an error connecting to the database
 if ($db->connect_error) {
