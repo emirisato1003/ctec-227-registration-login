@@ -1,6 +1,5 @@
 /* style.css */
-
-#login, #logout {
+#logout {
     /* set initial display to none */
     display: none;
 }
@@ -11,4 +10,14 @@
 
 #showPassword:hover {
     cursor: pointer;
+}
+
+.photo {
+    height: 200px;
+}
+
+.icon{
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
 }
