@@ -7,29 +7,28 @@ require_once 'inc/header.inc.php';
 <div class="container">
     <div class="row">
         <div class="col-12 m-3">
-                <h1 class="display-1 text-center "><img src="https://img.icons8.com/laces/256/paint-palette.png" width="90" height="90" alt="art gallery icon">Art Gallery</h1>
-                <?php
-                display_message();
-                if (!isset($_SESSION['first_name'])) {
-                    echo '<div class="my-4 text-center"><p>Sign up to upload your images</p>';
-                    echo '<a href="register.php" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Sign-Up</a></div>';
-                }
-                ?>
-                <?php
-                if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                    if (isset($_GET["del"])) {
-                        if (file_exists($_GET['del'])) {
-                            if (unlink($_GET["del"])) {
-                                // echo "<p class='alert alert-success mt-3'>File deleted successfully</p>";
-                                header("Location: home.php?message=File deleted successfully");
-                            } else {
-                                echo "<p class='alert alert-danger'>File could not be deleted</p>";
-                            }
+            <h1 class="display-1 text-center "><img src="https://img.icons8.com/laces/256/paint-palette.png" width="90" height="90" alt="art gallery icon">Art Gallery</h1>
+            <?php
+            display_message();
+            if (!isset($_SESSION['first_name'])) {
+                echo '<div class="my-4 text-center"><p>Sign up to upload your images</p>';
+                echo '<a href="register.php" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Sign-Up</a></div>';
+            }
+            ?>
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                if (isset($_GET["del"])) {
+                    if (file_exists($_GET['del'])) {
+                        if (unlink($_GET["del"])) {
+                            // echo "<p class='alert alert-success mt-3'>File deleted successfully</p>";
+                            header("Location: home.php?message=File deleted successfully");
+                        } else {
+                            echo "<p class='alert alert-danger'>File could not be deleted</p>";
                         }
                     }
                 }
-                ?>
-            </div>
+            }
+            ?>
         </div>
     </div>
 </div>

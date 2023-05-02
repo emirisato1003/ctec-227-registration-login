@@ -25,8 +25,6 @@ require_once __DIR__ . "/inc/db_connect.inc.php";
                         echo "<div>There was a problem registering your account</div>";
                     } else {
                         header("Location: login.php?message=your new account has been created. Log into your account!");
-                        // echo "<div><h1>Welcome Art Gallery, enjoy!<h1></div>";
-                        // echo '<a href="login.php" title="Login Page">Login</a>';
                     }
                 } catch (PDOException $th) {
                     //throw $th
@@ -63,4 +61,5 @@ require_once __DIR__ . "/inc/db_connect.inc.php";
             </div>
         </div>
     </div>
-    <?php require_once 'inc/footer.inc.php'; ?>
+</div>
+<?php require_once 'inc/footer.inc.php'; ?>

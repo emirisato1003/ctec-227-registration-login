@@ -44,7 +44,7 @@ if (!empty($message)) {
         <div class="col-8 mx-auto px-5 py-2 text-center border rounded-5 my-5">
             <h1 class="display-4 mt-5">Upload Your Image!</h1>
             <img src="https://static.vecteezy.com/system/resources/thumbnails/008/013/001/small_2x/cloud-upload-icon-on-computer-screen-illustration-in-line-art-style-free-vector.jpg" class="img-fluid uploads" alt="">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="100000000">
                 <input type="file" name="file_upload" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <button class="btn btn-outline-secondary btn-sm mt-2" type="submit" name="submit" id="inputGroupFileAddon04" value="Upload"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
@@ -54,7 +54,6 @@ if (!empty($message)) {
             </form>
         </div>
     </div>
-</div>
 </div>
 
 
