@@ -9,7 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link <?= echoActiveClassIfRequestMatches("register") ?>" href="register.php">Sign-up</a>
+                    <a class="nav-link <?= isset($_SESSION['first_name']) ? echoActiveClassIfRequestMatches('uploads') : 'd-none' ?>" href="uploads.php">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= !isset($_SESSION['first_name']) ? echoActiveClassIfRequestMatches('register') : 'd-none' ?>" href="register.php">Sign-up</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= echoActiveClassIfRequestMatches("login") ?>" href="login.php" id="login">Login</a>

@@ -2,8 +2,9 @@
 // register.php
 session_start();
 $pageTitle = "Register";
-require_once 'inc/header.inc.php';
-require_once 'inc/db_connect.inc.php';
+require_once __DIR__ . "/inc/header.inc.php";
+require_once __DIR__ . "/inc/function.inc.php";
+require_once __DIR__ . "/inc/db_connect.inc.php";
 ?>
 <div class="container my-5 d-flex justify-content-center">
     <div class="row">
@@ -23,8 +24,9 @@ require_once 'inc/db_connect.inc.php';
                     if (!$result) {
                         echo "<div>There was a problem registering your account</div>";
                     } else {
-                        echo "<div><h1>Welcome Art Gallery, enjoy!<h1></div>";
-                        echo '<a href="login.php" title="Login Page">Login</a>';
+                        header("Location: login.php?message=your new account has been created. Log into your account!");
+                        // echo "<div><h1>Welcome Art Gallery, enjoy!<h1></div>";
+                        // echo '<a href="login.php" title="Login Page">Login</a>';
                     }
                 } catch (PDOException $th) {
                     //throw $th

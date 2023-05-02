@@ -10,6 +10,7 @@ require_once 'inc/db_connect.inc.php';
     <div class="row">
         <div class="col-12">
             <?php
+            display_message();
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $email = $db->real_escape_string($_POST['email']);
                 $password = hash('sha512', $db->real_escape_string($_POST['password']));

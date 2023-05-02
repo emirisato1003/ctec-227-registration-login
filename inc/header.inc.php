@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php
-    require 'function.inc.php';
-    require 'navbar.inc.php';
-    ?>
+        <?php
+        require_once 'function.inc.php';
+        require_once 'navbar.inc.php';
+        ?>
